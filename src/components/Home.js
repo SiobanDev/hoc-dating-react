@@ -1,5 +1,5 @@
 import React from 'react';
-import {connexionUrl, inscriptionUrl} from "../constants";
+import {connectionUrl, inscriptionUrl} from "../constants";
 
 const Home = () => {
 
@@ -20,9 +20,9 @@ const Home = () => {
 
                 <div id="home-buttons">
                     <a
-                        id="connexion-btn"
+                        id="connection-btn"
                         className="btn"
-                        href={connexionUrl}
+                        href={connectionUrl}
                     >
                         CONNEXION
                     </a>
