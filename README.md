@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+- Create a file .env and a file .env.local
+- Add the next variables to the .env.local (we have to add REACT_APP_ prefix) :
+REACT_APP_hocDatingApiUrl 
+
 ## Available Scripts
 
 In the project directory, you can run:
