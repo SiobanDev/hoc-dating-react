@@ -6,7 +6,7 @@ import {loginEndPoint} from "../constants";
 //     return await Axios.get(loginEndPoint, userData);
 // };
 
-export const apiLogin = async (userData) => {
+export let apiLogin = async (userData) => {
     const res = await Axios.post(loginEndPoint, userData);
     return res;
     // return await Axios.get("http://127.0.0.1:8002/api/login_check", userData);

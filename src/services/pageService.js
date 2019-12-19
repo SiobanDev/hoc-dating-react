@@ -33,7 +33,10 @@ export async function connect(userData) {
     try {
         const apiConnexionResponse = await apiLogin(userData);
 
-        return ((apiConnexionResponse.status>= 200 && apiConnexionResponse.status < 400));
+        if (apiConnexionResponse.status>= 200 && apiConnexionResponse.status < 400){
+            return apiConnexionResponse.data.token
+        };
+        return apiConnexionResponse.status;
 
     } catch (e) {
         throw new Error(e);

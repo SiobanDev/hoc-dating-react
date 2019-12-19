@@ -6,11 +6,11 @@ import MainContainer from "./layouts/MainContainer";
 function App() {
   return (
       <>
-        <Header />
+        {/*<Header />*/}
 
         <MainContainer />
 
-        <Footer />
+        {/*<Footer />*/}
       </>
   );
 }

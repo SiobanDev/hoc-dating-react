@@ -1,4 +1,3 @@
-export const hocDatingApiUrl = process.env.REACT_APP_hocDatingApiUrl;
 export const loginEndPoint = `${process.env.REACT_APP_hocDatingApiUrl}/api/login_check`;
 export const moviesUrl = "/movies";
 export const connectionUrl = "/connection";

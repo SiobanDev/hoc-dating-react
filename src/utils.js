@@ -38,14 +38,3 @@ export function closePopUp(divToRemove) {
     return false;
 }
 
-// function getCookie(name) {
-//     var regexp = new RegExp("(?:^" + name + "|;\s*"+ name + ")=(.*?)(?:;|$)", "g");
-//     var result = regexp.exec(document.cookie);
-//     return (result === null) ? null : result[1];
-// }
-
-export function getCookie(name) {
-    var value = "; " + document.cookie;
-    var parts = value.split("; " + name + "=");
-    if (parts.length === 2) return parts.pop().split(";").shift();
-}
