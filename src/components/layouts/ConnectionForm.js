@@ -1,14 +1,32 @@
 import React, {Component} from 'react';
+import {connect} from "../../services/pageService";
+import {getFormData} from "../../utils";
+import {MainContext, mainContextData} from "../../mainContext";
 
-class ConnexionForm extends Component {
+class ConnectionForm extends Component {
+    static contextType = MainContext;
+
+    connexion = async (e) => {
+        e.preventDefault();
+        try {
+            const userApiToken = await connect(getFormData(['username', 'password']));
+            let user = this.context.userStateHandler(userApiToken);
+
+        } catch (error) {
+            throw new Error(error);
+        }
+    };
 
     render = () => {
+
+
         return (
+            <MainContext.Consumer value={mainContextData}>
             <div id="form-content" className="row">
                 <h4 className="mb-3">Connection</h4>
                 <form
                     //If I add parentheses on the function, it is executed when the loading. If not, it is just a reference
-                    onSubmit={this.props.submitHandler}
+                    onSubmit={connexion}
                     id="connection-form"
                     className="needs-validation"
                 >
@@ -53,9 +71,9 @@ class ConnexionForm extends Component {
                     </button>
                 </form>
             </div>
-
+            </MainContext.Consumer>
         );
     }
 };
 
-export default ConnexionForm;
+export default ConnectionForm;

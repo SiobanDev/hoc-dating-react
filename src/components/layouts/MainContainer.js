@@ -1,17 +1,12 @@
-import React, {useState} from 'react';
-import ConnectionPage from "../ConnectionPage";
-import {MainContext, mainContextData} from "../../mainContext";
+import React, {useContext} from 'react';
+import ConnectionForm from "./ConnectionForm";
+import {MainContext} from "../../mainContext";
 
 let MainContainer = () => {
-    const [userState, setUserstate] = useState(localStorage.setItem("token", null));
-
     return (
-        <MainContext.Provider value={mainContextData}>
-            <section id="main-container" className="main-content row">
-               <ConnectionPage/>
-            </section>
-        </MainContext.Provider>
-
+        <section id="main-container" className="main-content row">
+            <ConnectionForm/>
+        </section>
     );
 }
 
